@@ -2,7 +2,10 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [productCount, setProductCount] = useState([0, 0, 0, 0, 0]);
+  const products = ["Oranges", "Apples", "Kiwifruit", "Grapes", "Strawberries"];
+  const [productCount, setProductCount] = useState(
+    new Array(products.length).fill(0),
+  );
 
   function handlePlus(index) {
     const arr = [...productCount];
@@ -15,8 +18,6 @@ function App() {
     arr[index] = arr[index] - 1;
     setProductCount([...arr]);
   }
-
-  const products = ["Oranges", "Apples", "Kiwifruit", "Grapes", "Strawberries"];
   return (
     <>
       <ul>
